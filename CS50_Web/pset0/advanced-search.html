@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Advanced Search</title>
+    </head>
+    <style>
+        .top-block {
+            display: flex;
+            height: 30px;
+            padding: 8px;
+            min-width: 320px;
+            position: relative
+            }
+        .top-image {
+            flex: 1 1 auto;
+        }
+        .google-search {
+            padding-left: 15px;
+            padding-right: 15px;
+            flex: 0 0 auto
+            }
+        .bar {
+            color: #d93025;
+            font-size: 20px;
+            margin: 25px 35px;
+            font-family: arial,sans-serif;
+        }
+        .bar-border {
+            border-bottom: 1px solid #ebebeb;
+        }
+        .search-block{
+            display: block;
+            max-width: 1140px;
+            min-width: 200px;
+            width: 96%;
+            margin: 40px 2% 0 45px
+        }
+        .search-top{
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+        .search-top1{
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            width: 16%;
+            font-size: 16px;
+            font-family: arial,sans-serif;
+            min-height: 42px;
+            font-weight: 500;
+            color: #333;
+            vertical-align: middle;
+            }
+        .search-top2{
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            min-height: 41px;
+            width: 84%;
+            vertical-align: middle;
+        }
+        .inputs{
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+        .inputs-top1{
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            width: 16%;
+            height: 42px;
+            color: #222;
+            font-size: 13px;
+            font-family: arial,sans-serif;
+            clear: left;
+            line-height:25px;
+        }
+        .inputs-top2{
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            min-height: 41px;
+            vertical-align: middle;
+            width: 50%;
+            font-family: arial,sans-serif;
+        }
+        .inputs-top3{
+            float: left;
+            display: inline-block;
+            width: 32%;
+            min-width: 160px;
+            margin: 0 0 8px 1%;
+            font-size: 11px;
+            padding-left: 5px;
+            vertical-align: middle;
+            position: relative;
+        }
+        .input-text {
+            width: 97%;
+            text-align: left;
+            border-radius: 1px;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            font-size: 13px;
+            height: 25px;
+            padding: 1px 8px;
+        }
+        .input-text:focus{
+            box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+            border: 1px solid #4d90fe;
+            outline: none;
+        }
+        .inputs-button{
+            float: left;
+            display: inline-block;
+            min-width: 167px;
+            min-height: 41px;
+            vertical-align: middle;
+            width: 50%;
+            font-family: arial,sans-serif;
+        }
+        .adv-button{
+            min-width: 120px;
+            height: 30px;
+            float: right;
+            box-shadow: none;
+            background-color: #4d90fe;
+            border: 1px solid #3079ed;
+            color: #fff;
+            border-radius: 2px;
+            cursor: default;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .adv-button:focus{
+            box-shadow: inset 0 0 0 1px #fff;
+            border: rgba(0,0,0,0) solid 1px;
+            outline: rgba(0,0,0,0) 0;
+        }
+        .adv-button:active{
+            box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+            background: #357ae8;
+            border: 1px solid #2f5bb7;
+            border-top: 1px solid #2f5bb7;
+        }
+        .adv-button:hover{
+            background-color: #357ae8;
+            background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+            border: 1px solid #2f5bb7;
+        }
+    </style>
+    <body>
+        <div class="top-block">
+            <div class="top-image">
+                <a href="index.html" target="_top"><img class="google-image" alt="Google" height="24" width="74" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></a></li>
+            </div>
+            <div class="google-search">
+                <a href="index.html" target="_top">Google Search</a></li>
+            </div>
+        </div>
+        <div class="bar">
+            <label style="margin-left:10px">Advanced Search</label>
+        </div>
+        <div class="bar-border"></div>
+        <div class="search-block">
+            <form action="https://www.google.com/search" method="GET" name="f">
+                <div class="search-top">
+                    <div class="search-top1">
+                        <span>Find pages with...</span>
+                    </div>
+                    <div class="search-top2"></div>
+                </div>
+                <div class="inputs">
+                    <div class="inputs-top">
+                        <div class="inputs-top1">
+                                all these words:
+                        </div>
+                        <div class="inputs-top2">
+                            <input class="input-text" value="" autofocus="autofocus" name="as_q" type="text">
+                        </div>
+                        <div class="inputs-top3"></div>
+                        <div class="inputs-top1">
+                            <label vertical-align="middle">this exact word or phrase:</label>
+                        </div>
+                        <div class="inputs-top2">
+                            <input class="input-text" value="" autofocus="autofocus" name="as_epq" type="text">
+                        </div>
+                        <div class="inputs-top3"></div>
+                        <div class="inputs-top1">
+                            <label>any of these words:</label>
+                        </div>
+                        <div class="inputs-top2">
+                            <input class="input-text" value="" autofocus="autofocus" name="as_oq" type="text">
+                        </div>
+                        <div class="inputs-top3"></div>
+                        <div class="inputs-top1">
+                            <label>none of these words:</label>
+                        </div>
+                        <div class="inputs-top2">
+                            <input class="input-text" value="" autofocus="autofocus" name="as_eq" type="text">
+                        </div>
+                        <div class="inputs-top1"></div>
+                        <div class="inputs-button">
+                            <input class="adv-button" value="Advanced Search" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

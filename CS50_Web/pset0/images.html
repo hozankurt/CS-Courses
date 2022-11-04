@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Search</title>
+        <style>
+            .alt-pages {
+                    display: flex;
+                    justify-content: right;
+                    align-items: right;
+                    height: 60px;
+                }
+            .google-search {
+                    display: inline-block;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            .div-image{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 180px;
+            }
+            .image {display:flex;
+                    max-height: 92px;
+                    position: relative;
+                    height: 100%;
+                    margin-top: auto;
+                }
+            .google-image {
+                    margin-top: auto;
+                }
+            .search {
+                    display: block;
+                    text-align: center;
+                    max-height: 160px;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 18px;
+                }
+            .form-input {
+                display: flex;
+                margin: 0 auto;
+                background-color: transparent;
+                border: 1px solid #dfe1e5;
+                border-radius: 24px;
+                height: 44px;
+                width: 584px;
+                font-family: arial,sans-serif;
+                font-size: 16px;
+                padding-left: 12px;
+                padding-right: 12px;
+                }
+            .form-input:hover{
+                box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+                border-color: rgba(223,225,229,0);
+            }
+            .search-button {
+                background-color: #f8f9fa;
+                border: 1px solid #f8f9fa;
+                border-radius: 4px;
+                margin: 8px 4px;
+                color: #3c4043;
+                height: 36px;
+                min-width: 54px;
+                font-family: arial,sans-serif;
+                font-size: 14px;
+                padding: 0px 16px;
+            }
+            .search-button:hover {
+                border: 1px solid #dadce0;
+                color: #202124;
+            }
+            .search-button:focus {
+                border: 1px solid #4285f4;
+            }
+            .span{
+                color: #4285f4;
+                font: 16px/16px roboto-regular, arial, sans-serif;
+                position: absolute;
+                left: 215px;
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="alt-pages">
+                <div class="google-search">
+                    <a href="index.html" target="_top">Google Search</a></li>
+                </div>
+        </div>
+        <div class="div-image">
+            <div class="image">
+                <img class="google-image" alt="Google" height="92" width="272" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+                <span class="span">Images</span>
+            </div>
+        </div>
+        <div class="search">
+            <form action="https://www.google.com.tr/images">
+                <input class="form-input" type="text" name="q">
+            </br>
+                <input class="search-button" type="submit" value="Google Search" name="img">
+            </form>
+        </div>
+    </body>
+</html>

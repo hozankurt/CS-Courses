@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Posts</title>
+        <style>
+
+            @keyframes hide{
+                0% {
+                    opacity: 1;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 50px 0;
+                    margin: 10px;
+                }
+
+                75% {
+                    opacity: 0;
+                    height: 100%;
+                    line-height: 100%;
+                    padding: 50px 0;
+                    margin: 10px;
+                }
+                100% {
+                    opacity: 0;
+                    height: 0px;
+                    line-height: 0px;
+                    padding: 0px 0px;
+                    margin: 0px;
+                }
+            }
+
+            .post {
+                background-color: green;
+                margin: 10px;
+                font-size: 40px;
+                padding: 50px 0;
+                animation-name: hide;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                animation-play-state: paused;
+            }
+
+            .hide{
+                height: 40px;
+                font-size: 30px;
+                float: right;
+                margin: 0px 20px;
+            }
+        </style>
+        <script>
+
+            let counter = 1;
+            const quantity = 20;
+
+            function load() {
+                const start = counter;
+                const end = start + quantity;
+                counter = start + quantity;
+
+                for (let i = start; i < end; i++) {
+                    add_post(`Post #${i}`);
+                }
+            }
+
+            function add_post(content){
+                const post = document.createElement('div');
+                post.className = 'post';
+                post.innerHTML = `${content} <button class="hide">Hide</button>`;
+
+                document.querySelector('#posts').append(post);
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+                load();
+
+                history.scrollRestoration = "manual";
+                window.scrollTo(0,0);
+
+                window.onscroll = () => {
+                    if (window.innerHeight + window.scrollY > document.body.offsetHeight){
+                        load();
+                    }
+                }
+
+                document.addEventListener('click', event => {
+                    const element = event.target;
+                    if (element.className === 'hide'){
+                        element.parentElement.style.animationPlayState = 'running';
+                        element.parentElement.addEventListener('animationend',()=>{
+                            element.parentElement.remove();
+                        })
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id="posts">
+        </div>
+    </body>
+</html>
