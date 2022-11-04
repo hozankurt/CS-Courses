@@ -1,0 +1,23 @@
+%message{
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.alert-primary{
+    @extend %message;
+    background-color: green;
+}
+
+.alert-secondary{
+    @extend %message;
+    background-color: orange;
+}
+
+.alert-success{
+    @extend %message;
+    background-color: red;
+}
